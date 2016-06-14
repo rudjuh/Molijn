@@ -114,7 +114,15 @@ add_action( 'widgets_init', 'molijn_template_widgets_init' );
  * Enqueue scripts and styles.
  */
 function molijn_template_scripts() {
+
+	// bootstrap
+	wp_enqueue_style( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
+
 	wp_enqueue_style( 'molijn-template-style', get_stylesheet_uri() );
+
+	// jquery & bootstrap
+	wp_enqueue_script( 'jquery','https://code.jquery.com/jquery-2.2.3.min.js', array(), '20160407', true );
+	wp_enqueue_script( 'template-boostrap','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', array(), '20160407', true );
 
 	wp_enqueue_script( 'molijn-template-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
